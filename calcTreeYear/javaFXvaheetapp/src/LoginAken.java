@@ -23,36 +23,33 @@ public class LoginAken {
         setupRegistreeri();
     }
 
-    private void annaViga(String teade){                //teavitus as a method. Using .setText
+    private void annaViga(String teade){                // as a method. Using .setText
         teavitus.setText(teade);
         teavitus.setTextFill(Color.RED);
     }
 
     private void loginEkraan(){                       //LOGIN-aken
-        stage.setTitle("PUUMÕÕDIK");
+        stage.setTitle("TREE APP");
 
         login = new VBox();
         login.setAlignment(Pos.CENTER);
         Scene loginScene = new Scene(login, 400, 500);
 
-        Label kasutajanimiLabel = new Label("Hüüdnimi (vihje: sss@sss.ee)");
+        Label kasutajanimiLabel = new Label("User (vihje: sss@sss.ee)");
         kasutajanimi = new TextField();
         kasutajanimi.setMaxWidth(280);
 
-        Label passwordLabel = new Label("Pässakas (vihje: 999)");
+        Label passwordLabel = new Label("Passw (hinthint: 999)");
         password = new PasswordField();
         password.setMaxWidth(280);
 
         loginButton = new Button("ENTER");
-        registreeri = new Hyperlink("Registreeri");
+        registreeri = new Hyperlink("Register");
 
         login.getChildren().addAll(kasutajanimiLabel, kasutajanimi, passwordLabel, password, loginButton, registreeri, teavitus);
-        //(MINA: teavitus ei ole visuaalselt nähtav)
-
         stage.setScene(loginScene);
         stage.show();
     }
-
 
     private void setupLoginButton() {             //  Login-nupu loogika ja liikumine numbrite sisestamise aknasse
         loginButton.setOnAction(event -> {
